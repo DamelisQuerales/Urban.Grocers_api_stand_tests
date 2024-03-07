@@ -54,16 +54,16 @@ Se encontraron errores en los endpoints POST /order-and-go/v1/delivery y DELETE 
 
 ### Tabla de decisión DeliveryCost:
 |Nro| 0-9 art| 10-15 art| >15 art | 0-3kg    | 3,1-6kg  | >6kg     | Resultado Esperado|
-|--|---------|----------|---------|----------|----------|----------|----------|
-| 1| si      | no       | no      | si       | no       | no       | 0$       |
-| 2| si      | no       | no      | no       | si       | no       | 5$       |
-| 3| si      | no       | no      | no       | no       | si       | 9$       |
-| 4| no      | si       | no      | si       | no       | no       | 5$       |
-| 5| no      | si       | no      | no       | si       | no       | 5$       |
-| 6| no      | si       | no      | no       | no       | si       | 9$       |
-| 7| no      | no       | si      | si       | no       | no       | 9$       |
-| 8| no      | no       | si      | no       | si       | no       | 9$       |
-| 9| no      | no       | si      | no       | no       | si       | 9$       |
+|:---:|:-------:|:--------:|:--------:|:--------:|:--------:|:--------:|:-----------------:|
+| 1| si      | no       | no      | si       | no       | no       |        0$         |
+| 2| si      | no       | no      | no       | si       | no       |        5$         |
+| 3| si      | no       | no      | no       | no       | si       |        9$         |
+| 4| no      | si       | no      | si       | no       | no       |        5$         |
+| 5| no      | si       | no      | no       | si       | no       |        5$         |
+| 6| no      | si       | no      | no       | no       | si       |        9$         |
+| 7| no      | no       | si      | si       | no       | no       |        9$         |
+| 8| no      | no       | si      | no       | si       | no       |        9$         |
+| 9| no      | no       | si      | no       | no       | si       |        9$         |
 
 ![Evidencia de Error para endpoints](bug_deliverycost.PNG)
 
