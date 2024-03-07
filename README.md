@@ -1,7 +1,14 @@
 # Urban.Grocers by Postman
 
-Este proyecto contiene una colección de pruebas Postman para probar la funcionalidad que cubre el trabajo con kits, las entregas y el carrito de la API de Urban.Grocers.
-Se incluyen pruebas positivas y negativas
+En este proyecto se prueba la funcionalidad de la API de Urban Grocers con una colección completa de pruebas Postman. Se validan las operaciones relacionadas con kits, entregas y el carrito de compras.
+
+### Características:
+
+**Análisis de requisitos:** Se realiza un análisis exhaustivo de los requisitos para cada endpoint de la API.
+
+**Pruebas positivas y negativas:** Se diseñan pruebas para verificar el comportamiento esperado de la API en diferentes escenarios, tanto positivos como negativos.
+
+**Reporte de bugs:** Se documentan y reportan de forma clara los errores encontrados durante las pruebas.
 
 ## Pasos para ejecutar las pruebas
 
@@ -43,10 +50,27 @@ Se encontraron errores en los endpoints POST /order-and-go/v1/delivery y DELETE 
 ### Endpoints con errores:
 
 * POST /order-and-go/v1/delivery: Se ha detectado que 12 casos de prueba para el endpoint POST /order-and-go/v1/delivery están fallando debido a que los resultados obtenidos no coinciden con los esperados. Tras analizar los fallos, se ha encontrado un error en la lógica de la API para este endpoint, específicamente en las pruebas relacionadas con el cálculo del costo de envío (DeliveryCost) en función del peso de los productos (productsWeight). (Se incluye evidencia de un caso ejemplo).
+
+
+### Tabla de decisión DeliveryCost:
+|Nro| 0-9 art| 10-15 art| >15 art | 0-3kg    | 3,1-6kg  | >6kg     | Resultado Esperado|
+|--|---------|----------|---------|----------|----------|----------|----------|
+| 1| si      | no       | no      | si       | no       | no       | 0$       |
+| 2| si      | no       | no      | no       | si       | no       | 5$       |
+| 3| si      | no       | no      | no       | no       | si       | 9$       |
+| 4| no      | si       | no      | si       | no       | no       | 5$       |
+| 5| no      | si       | no      | no       | si       | no       | 5$       |
+| 6| no      | si       | no      | no       | no       | si       | 9$       |
+| 7| no      | no       | si      | si       | no       | no       | 9$       |
+| 8| no      | no       | si      | no       | si       | no       | 9$       |
+| 9| no      | no       | si      | no       | no       | si       | 9$       |
+
 ![Evidencia de Error para endpoints](bug_deliverycost.PNG)
 
 * DELETE /api/v1/orders/:id: La eliminación de pedidos por ID falló. No se ejecuta la eliminación del pedido.
+
 ![Evidencia de Error para endpoints](bug_delete.png)
+
 
 ## Conclusiones:
 
